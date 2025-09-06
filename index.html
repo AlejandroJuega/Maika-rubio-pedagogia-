@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maika Rubio - Pedagoga</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header class="navbar">
+    <div class="logo">Maika Rubio - Pedagoga</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#clases">Clases</a>
+      <a href="#sobre">Sobre Nosotros</a>
+      <a href="#contacto">Contáctenos</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </header>
+
+  <!-- Secciones -->
+  <section id="home">
+    <h1>Bienvenidos a Maika Rubio - Pedagoga</h1>
+    <p>Apoyo educativo y pedagógico personalizado.</p>
+  </section>
+
+  <section id="clases">
+    <h2>Clases</h2>
+    <div class="class-grid">
+      <div class="class-card">
+        <h3>Primaria</h3>
+        <p>De 4 a 5 — 8€</p>
+        <p>De 5 a 6 — 8€</p>
+        <button onclick="openForm('Primaria')">Reservar</button>
+      </div>
+      <div class="class-card">
+        <h3>ESO</h3>
+        <p>De 6 a 7 — 8€</p>
+        <p>De 7 a 8 — 8€</p>
+        <button onclick="openForm('ESO')">Reservar</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre Nosotros</h2>
+    <p>En Maika Rubio trabajamos con pasión la pedagogía para ayudar a niños y jóvenes en su aprendizaje, reforzando sus habilidades y acompañándolos en su desarrollo educativo.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contáctenos</h2>
+    <p>Teléfono: <a href="tel:606679511">606 679 511</a> <button onclick="copyPhone()">📋 Copiar</button></p>
+  </section>
+
+  <!-- Modal Formulario -->
+  <div id="formModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm()">&times;</span>
+      <h2>Reservar clase</h2>
+      <form id="reservationForm" action="https://formspree.io/f/xyzdlzak" method="POST">
+        <label>Nombre:<input type="text" name="nombre" required></label>
+        <label>Email:<input type="email" name="email" required></label>
+        <label>Clase:<input type="text" id="claseSeleccionada" name="clase" readonly></label>
+        <button type="submit">Enviar reserva</button>
+      </form>
+      <p id="formSuccess" style="color:green; display:none;">✅ Tu reserva se envió con éxito.</p>
+    </div>
+  </div>
+
+  <!-- Botón admin -->
+  <button id="admin-button" style="display:none; position:fixed; right:20px; bottom:20px; padding:12px 20px; background:#007bff; color:#fff; border:none; border-radius:8px; font-size:16px; cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+    🔑 Iniciar videollamada
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
